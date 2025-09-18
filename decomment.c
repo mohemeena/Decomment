@@ -40,13 +40,15 @@ return STATE_CODE;
 /* Saw a slash: decide if it's a comment or just a slash */
 static State handle_slash(int c) {
     if (c == '*') {
-        print_char(' ');       /* replace comment with space */
-        commentLine = line;    /* remember where comment started */
+        print_char(' ');
+        commentLine = line;
         return STATE_IN_COMMENT;
     }
-    /* Not start of comment: output slash and handle c normally */
+    /* Always print the slash if it's not a comment start */
     print_char('/');
-    if (c != EOF) ungetc(c, stdin);
+    if (c != EOF) {
+        ungetc(c, stdin);  /* push back the lookahead character */
+    }
     return STATE_CODE;
 }
 
