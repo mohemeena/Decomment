@@ -3,7 +3,7 @@ Assignment 1 readme File
 ------------------------------------------------------------------------
 What is your name?
 
-
+Mohemeen Ahmed
 
 ------------------------------------------------------------------------
 What authorized sources of information did you use to complete the
@@ -12,7 +12,11 @@ in the "Policies" web page (also available on armlab in the file
 ~cos217/AuthorizedSourcesList ) to this section of the readme file,
 and edit it as appropriate.
 
-
+COS 217 lecture materials.
+COS 217 precept materials.
+COS 217 website.
+COS 217 textbooks.
+The man pages on the armlab cluster.
 
 ------------------------------------------------------------------------
 What unauthorized sources of information did you use to complete the
@@ -26,7 +30,7 @@ interaction, may additionally require the interaction being reported
 to the Committee on Discipline. Write "None" if you used no
 unauthorized sources of information.
 
-
+None.
 
 ------------------------------------------------------------------------
 In fulfillment of the requirement from section 2.4.3 of the Academic
@@ -36,6 +40,7 @@ enter your name in the space below the following affirmation:
 This paper represents my own work in accordance with University
 regulations.
 
+Mohemeen Ahmed.
 
 
 ------------------------------------------------------------------------
@@ -44,11 +49,19 @@ Regulations in Princeton's Rights, Rules, Responsibilities guide,
 and the COS 217 Generative AI policy, disclose and describe how you
 used AI in completing this assignment:
 
-
+I used AI in the following ways: helping me edit comments in the code 
+and write out my comments for each of my functions.
+I also used it for help with git commands and pushing/pulling from git
+as well as debugging syntax errors in my code including how I wrote
+"/" and "'" in my code.
 
 ------------------------------------------------------------------------
 What is your assessment of the assignment? Was it helpful? Was it fun?
-
+I think this was a very helpful assignment as it helped me understand
+how to work through code in C and learn the syntax. I also learned
+a lot about state machines and how they work and applying a DFA. I also learned a lot
+about git and how to use it effectively, as well as helpful shortcuts. I also think it was fun
+to work on a project that has a real world application.
 
 
 ------------------------------------------------------------------------

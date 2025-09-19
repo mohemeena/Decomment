@@ -1,0 +1,41 @@
+CODE (accept) <-- the start state
+   '/': SLASH
+   '"': INSIDE_STRING
+   '\'': INSIDE_CHAR
+   '\n': CODE (print newline, increment line)
+   other: CODE (print character)
+
+SLASH (accept)
+   '*': INSIDE_COMMENT (print a single space, record commentLine)
+   other: CODE (print '/', push back character)
+
+INSIDE_COMMENT (reject)
+   '*': STAR_INSIDE_COMMENT
+   '\n': INSIDE_COMMENT (print newline, increment line)
+   other: INSIDE_COMMENT
+   EOF: ERROR (print error message, exit failure)
+
+STAR_INSIDE_COMMENT (reject)
+   '/': CODE (end comment)
+   '*': STAR_INSIDE_COMMENT (stay in star state)
+   '\n': INSIDE_COMMENT (print newline, increment line)
+   other: INSIDE_COMMENT
+   EOF: ERROR (print error message, exit failure)
+
+INSIDE_STRING (accept)
+   '\\': ESCAPE_INSIDE_STRING (print '\\')
+   '"': CODE (print '"', end string)
+   '\n': INSIDE_STRING (print newline, increment line)
+   other: INSIDE_STRING (print character)
+
+ESCAPE_INSIDE_STRING (accept)
+   any: INSIDE_STRING (print character literally)
+
+INSIDE_CHAR (accept)
+   '\\': ESCAPE_INSIDE_CHAR (print '\\')
+   '\'': CODE (print '\'', end char literal)
+   '\n': INSIDE_CHAR (print newline, increment line)
+   other: INSIDE_CHAR (print character)
+
+ESCAPE_INSIDE_CHAR (accept)
+   any: INSIDE_CHAR (print character literally)
