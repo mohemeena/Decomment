@@ -103,6 +103,7 @@ static State handle_in_char_esc(int c) {
 int main(void) {
     State state = STATE_CODE;
     int c;
+    /* NOTE: no-op change for testing push */
     while ((c = getchar()) != EOF) {
         switch (state) {
             case STATE_CODE:            state = handle_code(c); break;
@@ -122,13 +123,6 @@ int main(void) {
     }
 
     return EXIT_SUCCESS;
-}
-if (state == STATE_IN_COMMENT || state == STATE_IN_COMMENT_STAR) {
-
-    fprintf(stderr, "Error: line %d: unterminated comment\n", commentline);
-
-    return EXIT_FAILURE;
-
 }
 
 
